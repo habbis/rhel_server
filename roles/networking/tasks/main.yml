@@ -1,0 +1,131 @@
+---
+
+- name: Install needed network manager libs
+  ansible.builtin.package:
+    name:
+      - NetworkManager-libnm
+      - nm-connection-editor
+      - libsemanage-python3
+      - policycoreutils-python3
+    state: present
+  ignore_errors: yes
+
+- name: add vlan22
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan22
+    vlanid: 22
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan23
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan23
+    vlanid: 23
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan24 
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan24
+    vlanid: 24
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan21 office
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan21
+    vlanid: 21
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan26 apinjic
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan26
+    vlanid: 26
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan27 akvanvig
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan27
+    vlanid: 27
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan28 bastion_mgmt
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan28
+    vlanid: 28
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan39 media
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan39
+    vlanid: 39
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan40 proxy
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan40
+    vlanid: 40
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan46 ansible
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan46
+    vlanid: 46
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan31 mgmt
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan31
+    vlanid: 31
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan33 prodno
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan33
+    vlanid: 33
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan30 backup
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan30
+    vlanid: 30
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan55 squid
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan55
+    vlanid: 55
+    vlandev: "{{ ethernet }}"
+    state: present
+
+- name: add vlan56 moncore
+  community.general.nmcli:
+    type: vlan
+    conn_name: vlan56
+    vlanid: 56
+    vlandev: "{{ ethernet }}"
+    state: present

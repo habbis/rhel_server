@@ -1,0 +1,43 @@
+---
+
+- name: Set authorized keys taken from url
+  authorized_key:
+    user: root
+    state: present
+    key: https://github.com/habbis.keys
+  ignore_errors: yes
+
+- name: Set authorized keys taken from url
+  authorized_key:
+    user: habbis
+    state: present
+    key: https://github.com/habbis.keys
+  ignore_errors: yes
+
+- name: Set authorized keys taken from url
+  authorized_key:
+    user: virt
+    state: present
+    key: https://github.com/habbis.keys
+  ignore_errors: yes
+
+- name: Set authorized keys taken from url
+  authorized_key:
+    user: cusr
+    state: present
+    key: https://github.com/habbis.keys
+  ignore_errors: yes
+
+- name: Download ssh_config from git repo
+  get_url:
+    url: https://gitlab.com/habbis/openssh_config/raw/master/ssh_config
+    dest: /etc/ssh/
+    mode: '0744'
+  ignore_errors: yes
+
+- name: Download sshd_config from git repo
+  get_url:
+    url: https://gitlab.com/habbis/openssh_config/raw/master/sshd_config
+    dest: /etc/ssh/
+    mode: '0744'
+  ignore_errors: yes

@@ -1,0 +1,9 @@
+---
+- name: netplan file
+  get_url:
+    url: https://gitlab.com/habbis/rcs/-/raw/master/rcsed
+    dest: /usr/local/bin/
+    mode: '0761'
+
+#- name: create folder for RCS 
+#  command: mkdir -p /etc/netplan/RCS

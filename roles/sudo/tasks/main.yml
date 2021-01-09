@@ -1,0 +1,11 @@
+---
+- name: add group admins for nopasswd sudo
+  group:
+    name: admins
+    state: present
+
+- name: sudoers file
+  get_url:
+    url: https://raw.githubusercontent.com/habbis/sudoers/master/admins
+    dest: /etc/sudoers.d/
+    mode: '0440'

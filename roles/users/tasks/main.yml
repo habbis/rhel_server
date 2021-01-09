@@ -1,0 +1,21 @@
+---
+- name: user for virtual machines
+  user:
+    name: virt
+    shell: /bin/bash
+    groups: libvirt
+    append: yes
+
+#- name: user for lxd
+#  user:
+#    name: cusr
+#    shell: /bin/bash
+#    groups: lxd
+#    append: yes
+
+- name: add user called user with sudo right
+  user:
+    name: user
+    shell: /bin/bash
+    groups: admins
+    append: yes
