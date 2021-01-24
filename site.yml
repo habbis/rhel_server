@@ -9,7 +9,7 @@
   roles:
     - common
     #- pip
-    #- sudo
+    - sudo
     - users
     - sshkeys
     #- networking
